@@ -1,11 +1,10 @@
-import re
 import random
 
 # messages and responses
-greetings = ["hello", "hi", "greetings", "hola", "privet", "hey", "howdy"]
+greetings = ["hello", "hi", "greetings", "hola", "sup", "hey", "howdy", "yello", "bonjour", "ciao"]
 greetingsResp = ["Hi there", "Howdy there", "Greetings"]
 
-questions = ["what's up", "how are you", "how goes it", "sup", "how are you doing"]
+questions = ["what's up", "how are you", "how goes it", "how are you doing"]
 questionResp = ["Just talking with you !", "Busy", "Nothing much", "I am doing well"]
 
 statements = ["cool", "awesome", "narly", "rad"]
@@ -60,17 +59,15 @@ def respond(message):
 def main():
   
   intro()
-
-  message = input("You: ").lower()
   
   while(True):  
+    
+    message = input("You: ").lower().strip('.;!?').strip()
     
     respond(message)
     
     if(message == "bye"):
       break
-      
-    message = input("You: ").lower()
     
 main()
     
